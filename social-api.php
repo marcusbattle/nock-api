@@ -105,11 +105,13 @@ class Social_API {
 				'id' 			=> 2,
 				'name' 			=> 'The Summit',
 				'description' 	=> '',
+				'link'			=> 'groups/2'
 			),
 			array(
 				'id' 			=> 3,
 				'name' 			=> 'Connect50',
 				'description' 	=> '',
+				'link'			=> 'groups/3'
 			)
 		);
 
