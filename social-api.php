@@ -46,6 +46,12 @@ class Social_API {
 	        'callback' => array( $this, 'GET_status' ),
 	    ) );
 
+		// GET Status (All)
+		register_rest_route( 'social-api/v1', '/groups', array(
+	        'methods' => 'GET',
+	        'callback' => array( $this, 'GET_groups' ),
+	    ) );
+
 	}
 
 	public function GET_users( $data ) {
@@ -66,6 +72,12 @@ class Social_API {
 
 		$statuses = get_posts( $args );
 
+		foreach ( $statuses as $index => $status ) {
+
+			// $statuses[ $index ]->post_content = wpautop( $status->post_content );
+
+		}
+
 	    return $statuses;
 
 	}
@@ -78,6 +90,30 @@ class Social_API {
 
 		return $status;
 		
+	}
+
+	public function GET_groups( $data ) {
+
+		$groups = array(
+			array(
+				'id' 			=> 1,
+				'name' 			=> 'Family',
+				'description' 	=> 'Where the Battle Family lives',
+			),
+			array(
+				'id' 			=> 2,
+				'name' 			=> 'The Summit',
+				'description' 	=> '',
+			),
+			array(
+				'id' 			=> 3,
+				'name' 			=> 'Connect50',
+				'description' 	=> '',
+			)
+		);
+
+		return $groups;
+
 	}
 
 }
