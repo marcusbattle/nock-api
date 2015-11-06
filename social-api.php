@@ -99,6 +99,7 @@ class Social_API {
 				'id' 			=> 1,
 				'name' 			=> 'Family',
 				'description' 	=> 'Where the Battle Family lives',
+				'link'			=> 'groups/1'
 			),
 			array(
 				'id' 			=> 2,
