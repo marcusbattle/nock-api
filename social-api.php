@@ -75,6 +75,17 @@ class Social_API {
 		foreach ( $statuses as $index => $status ) {
 
 			// $statuses[ $index ]->post_content = wpautop( $status->post_content );
+			$images = get_attached_media( 'image' );
+			$image_url = '';
+			$image_html = '';
+
+			foreach ( $images as $image ) {
+				$image_url = wp_get_attachment_url( $image->ID );
+				$image_html = "<div class=\"image\"><img src=\"{$image_url}\" /></div>";
+			}
+
+			$statuses[ $index ]->image_url = $image_url;
+			$statuses[ $index ]->image_html = $image_html;
 
 		}
 
