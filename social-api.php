@@ -107,21 +107,34 @@ class Social_API {
 		$groups = array(
 			array(
 				'id' 			=> 1,
-				'name' 			=> 'Family',
-				'description' 	=> 'Where the Battle Family lives',
+				'name' 			=> 'UNCG',
 				'link'			=> 'groups/1'
 			),
 			array(
 				'id' 			=> 2,
-				'name' 			=> 'The Summit',
-				'description' 	=> '',
+				'name' 			=> 'NCAT',
 				'link'			=> 'groups/2'
 			),
 			array(
 				'id' 			=> 3,
-				'name' 			=> 'Connect50',
-				'description' 	=> '',
+				'name' 			=> 'GTCC',
 				'link'			=> 'groups/3'
+			),
+			array(
+				'id' 			=> 4,
+				'name' 			=> 'Greensboro College',
+				'link'			=> 'groups/4'
+			),
+			array(
+				'id' 			=> 5,
+				'name' 			=> 'Bennett',
+				'link'			=> 'groups/5'
+			),
+			array(
+				'id' 			=> 6,
+				'name' 			=> 'Alumni',
+				'link'			=> 'groups/6',
+				'attributes'	=> array( 'locked' )
 			)
 		);
 
