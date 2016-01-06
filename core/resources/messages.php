@@ -19,6 +19,9 @@ Class Nock_API_Messages {
 		add_action( 'init', array( $this, 'init_message_post_type' ) );
 		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
 
+		add_filter( 'manage_message_posts_columns', array( $this, 'message_column_headers' ) );
+		add_action( 'manage_message_posts_custom_column', array( $this, 'message_columns' ), 10, 2 );
+
 	}
 
 	/**
@@ -29,7 +32,7 @@ Class Nock_API_Messages {
 	    $args = array(
 			'public'		=> true,
 			'label'		=> 'Messages',
-			'menu_icon'	=> 'dashicons-format-status',
+			'menu_icon'	=> 'dashicons-testimonial',
 	    );
 
 	    register_post_type( 'message', $args );
@@ -37,6 +40,35 @@ Class Nock_API_Messages {
 	}
 
 	public function register_routes() {
+
+	}
+
+	public function message_column_headers( $columns ) {
+
+		unset( $columns['date'] );
+
+		$columns['title'] = 'Message';
+		$columns['from'] = 'From';
+		$columns['to'] = 'To';
+		$columns['date'] = 'Date';
+
+	    return $columns;
+
+	}
+
+	public function message_columns( $column, $message_id ) {
+
+		switch ( $column ) {
+
+			case 'to':
+				echo get_post_meta( $message_id, 'message_to', true );
+				break;
+
+			case 'from':
+				echo get_post_meta( $message_id, 'message_from', true );
+				break;
+
+		}
 
 	}
 
