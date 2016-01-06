@@ -15,6 +15,7 @@ class Nock_API {
 	public $users;
 	public $sessions;
 	public $statuses;
+	public $messages;
 
 	static function init() {
 
@@ -40,13 +41,14 @@ class Nock_API {
 		require_once plugin_dir_path( __FILE__ ) . 'core/resources/users.php';
 		require_once plugin_dir_path( __FILE__ ) . 'core/resources/sessions.php';
 		require_once plugin_dir_path( __FILE__ ) . 'core/resources/statuses.php';
-
+		require_once plugin_dir_path( __FILE__ ) . 'core/resources/messages.php';
 
 		$this->oauth = new Nock_API_Oauth();
 		$this->apps = new Nock_API_Apps();
 		$this->users = new Nock_API_Users();
 		$this->sessions = new Nock_API_Sessions();
 		$this->statues = new Nock_API_Statuses();
+		$this->messages = new Nock_API_Messages();
 
 	}
 
